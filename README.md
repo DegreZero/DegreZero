@@ -1,16 +1,11 @@
-### Hi there 👋
+### Hi guys, here's a little secret for you to exploit 👋
 
-<!--
-**DegreZero/DegreZero** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+```go
+if nf, ok := output.(float64); ok {
+    return nf, nil
+} else if ni, ok := output.(int); ok {
+    return float64(ni), nil
+}
+log.Errorw("invalid query execution: result should be number", "query", query, "result", output, "type", reflect.TypeOf(output))
+return num, errors.New("invalid query execution result")
+```
